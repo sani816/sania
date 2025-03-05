@@ -1,0 +1,130 @@
+/* Center everything */
+body {
+    background: rgb(17, 4, 68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Text styling */
+h1 {
+    font-size: 30px;
+    color: pink;
+    text-shadow: 0 0 10px pink, 0 0 20px red;
+    margin-bottom: 250px; 
+}
+
+/* Heart shape */
+.heart {
+    position: fixed; /* Fixed position */
+    top: 50%; /* Vertical center */
+    left: 50%; /* Horizontal center */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    width: 100px;
+    height: 100px;
+    background: red;
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite alternate;
+    cursor: pointer;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    from {
+        transform: scale(1) rotate(-45deg);
+    }
+    to {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+/* Center everything */
+body {
+    background: black;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Styling for the sliding text */
+.slide-text {
+    font-size: 40px;
+    color: pink;
+    text-shadow: 0 0 10px pink, 0 0 20px red;
+    animation: slideIn 3s ease-out infinite; /* Slide-in animation */
+}
+
+/* Slide-in animation from left */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%); /* Start off-screen to the left */
+        opacity: 0; /* Initially invisible */
+    }
+    to {
+        transform: translateX(0); /* Move to the center */
+        opacity: 1; /* Fade in */
+    }
+}
+
+/* Styling for the slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Hide all images initially */
+.mySlides {
+    display: none;
+}
+
+/* Image styling */
+.mySlides img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add fade transition effect for images */
+.fade {
+    animation-name: shape;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+/* Fade animation for images */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
